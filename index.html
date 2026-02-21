@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #numbersList {
+            display: flex;
+            flex-direction: column;
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Js Exercise 3</h1>
+
+    <h3>Enter a Number: <input type="number" id="input"></h3>
+    <button onclick="insert()">Insert</button>
+    <button onclick="deleteAll()">Delete All</button>
+    <h3>Numbers:</h3>
+    <div id="numbersList"></div>
+
+    <h3>Sum: <span id="sum"></span></h3>
+    <h3>Highest: <span id="highest"></span></h3>
+    <h3>Lowest: <span id="lowest"></span></h3>
+
+    <script>
+        let numbers = [];
+
+        function insert() {
+            const input = document.getElementById('input');
+            const num = parseFloat(input.value);
+            
+            if (input.value === '') {
+                alert('Please enter a number');
+                return;
+            }
+            
+            numbers.push(num);
+            input.value = '';
+            updateDisplay();
+        }
+
+        function deleteAll() {
+            numbers = [];
+            updateDisplay();
+        }
+
+        function updateDisplay() {
+            const listDiv = document.getElementById('numbersList');
+            listDiv.innerHTML = numbers.map(num => `<div>${num}</div>`).join('');
+            
+            document.getElementById('sum').textContent = numbers.reduce((a, b) => a + b, 0);
+            document.getElementById('highest').textContent = numbers.length ? Math.max(...numbers) : '';
+            document.getElementById('lowest').textContent = numbers.length ? Math.min(...numbers) : '';
+        }
+    </script>
+</body>
+</html>
