@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Js Exercise 2</h1>
+    <h2>Full Name:<br><span id="Display"></span></h2>
+    <h3>First name:  <input type="text" id="firstName"></h3>
+    <h3>Middle name:  <input type="text" id="middleName"></h3>
+    <h3>Last name:  <input type="text" id="lastName"></h3>
+    <button onclick="displayFullName()">Generate Full Name</button>  
+    <button onclick="clearFields()">Clear Entries</button>
+    <script>
+        function displayFullName() {            
+            var firstName = document.getElementById("firstName").value;
+            var middleName = document.getElementById("middleName").value;
+            var lastName = document.getElementById("lastName").value;
+            var fullName = firstName + " " + middleName + " " + lastName;
+            document.getElementById("Display").innerHTML = "<b>" + fullName + "</b>";
+        }
+
+            function clearFields() {
+                document.getElementById("firstName").value = "";
+                document.getElementById("middleName").value = "";
+                document.getElementById("lastName").value = "";
+            }   
+        </script>
+    </body>
+</html>
