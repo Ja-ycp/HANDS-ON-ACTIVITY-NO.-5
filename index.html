@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Js Exercise</h1>
+    <h3>Enter First Number: <input  type="number" id="num1"> </h3>
+    <h3>Enter Second Number:  <input  type="number" id="num2"></h3>
+  <button onclick="calculate()">Calculate</button>
+  <button onclick="Clear()">Clear</button>
+
+   <h3 id="Sum">Sum: </h3>
+   <h3 id="diff">Difference: </h3>
+    <h3 id="product">Product: </h3>
+    <h3 id="quotient">Quotient: </h3>
+</body>
+</html>         
+<script>
+function calculate() {
+    const num1 = parseFloat(document.getElementById("num1").value);
+    const num2 = parseFloat(document.getElementById("num2").value);
+    
+    document.getElementById("Sum").textContent = "Sum: " + (num1 + num2);
+    document.getElementById("diff").textContent = "Difference: " + (num1 - num2);
+    document.getElementById("product").textContent = "Product: " + (num1 * num2);
+    document.getElementById("quotient").textContent = "Quotient: " + (num1 / num2);
+}
+
+function Clear() {
+    document.getElementById("num1").value = "";
+    document.getElementById("num2").value = "";
+    document.getElementById("Sum").textContent = "Sum: ";
+    document.getElementById("diff").textContent = "Difference: ";
+    document.getElementById("product").textContent = "Product: ";
+    document.getElementById("quotient").textContent = "Quotient: ";
+}
+</script>
